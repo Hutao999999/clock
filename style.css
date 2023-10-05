@@ -244,6 +244,25 @@ body.nightMode .board .nightMode .nightModeButton::before {
 @media (max-width: 825px) {
   .board {
     transform: rotate(90deg);
-    min-width: 800px;
+    min-width: 600px;
+  }
+
+  .board .inside {
+    width: 500px;
+    height: 300px;
+  }
+
+  .board .inside .daysContainer {
+    font-size: 20px;
+  }
+
+  .board .inside .clock .hour .showNumber,
+  .board .inside .clock .minute .showNumber,
+  .board .inside .clock .second .showNumber {
+    font-size: 60px;
+  }
+
+  .board .inside .date {
+    font-size: 30px;
   }
 }

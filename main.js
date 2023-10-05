@@ -79,7 +79,7 @@ setInterval(() => {
   minutes.innerHTML = betterNumber(minute)
   seconds.innerHTML = betterNumber(second)
 
-  dates.innerHTML = `${year} / ${month} / ${date}`
+  dates.innerHTML = `${betterNumber(year)} / ${betterNumber(month)} / ${betterNumber(date)}`
 
   if (nightModeButton.checked) {
     body.classList.add("nightMode")
