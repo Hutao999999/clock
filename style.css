@@ -1,0 +1,249 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: 0.3s;
+}
+
+body.nightMode {
+  background-color: black;
+}
+
+.board {
+  width: 800px;
+  background-color: white;
+  height: 400px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+body.nightMode .board {
+  background-color: rgb(50, 50, 50);
+}
+
+.board .inside {
+  width: 700px;
+  height: 300px;
+  background-color: rgb(200, 200, 200);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+body.nightMode .board .inside {
+  background-color: rgb(30, 30, 30);
+}
+
+.board .inside .daysContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 30px;
+  font-family: 'Orbitron';
+}
+
+.board .inside .days {
+  color: rgb(150, 150, 150);
+  transition: 0.3s;
+}
+
+body.nightMode .board .inside .days {
+  color: rgb(50, 50, 50);
+}
+
+.board .inside .days.selected {
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+body.nightMode .board .inside .days.selected {
+  color: rgb(0, 255, 255);
+  font-weight: 500;
+  text-shadow:
+    0 0 15px rgb(0, 255, 255),
+    0 0 30px rgb(0, 255, 255),
+    0 0 45px rgb(0, 255, 255),
+    0 0 60px rgb(0, 255, 255);
+}
+
+.board .inside .clock {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.board .inside .clock .hour,
+.board .inside .clock .minute,
+.board .inside .clock .second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+  font-family: 'Orbitron';
+  transition: 0.3s;
+}
+
+body.nightMode .board .inside .clock .hour,
+body.nightMode .board .inside .clock .minute,
+body.nightMode .board .inside .clock .second {
+  color: rgb(0, 255, 255);
+  font-weight: 500;
+  text-shadow:
+    0 0 15px rgb(0, 255, 255),
+    0 0 30px rgb(0, 255, 255),
+    0 0 45px rgb(0, 255, 255),
+    0 0 60px rgb(0, 255, 255);
+}
+
+.board .inside .clock .hour .showNumber,
+.board .inside .clock .minute .showNumber,
+.board .inside .clock .second .showNumber {
+  font-size: 80px;
+}
+
+.board .inside .clock .hour .text,
+.board .inside .clock .minute .text,
+.board .inside .clock .second .text {
+  font-size: 20px;
+}
+
+.board .inside .date {
+  font-size: 40px;
+  font-family: 'Orbitron';
+  transition: 0.3s;
+}
+
+body.nightMode .board .inside .date {
+  color: rgb(0, 255, 255);
+  font-weight: 500;
+  text-shadow:
+    0 0 15px rgb(0, 255, 255),
+    0 0 30px rgb(0, 255, 255),
+    0 0 45px rgb(0, 255, 255),
+    0 0 60px rgb(0, 255, 255);
+}
+
+.board .nightMode {
+  width: 100px;
+  height: 30px;
+}
+
+.board .nightMode .nightModeButton {
+  width: 100px;
+  background-color: rgb(200, 200, 200);
+  height: 30px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 300px;
+  transition: 0.3s;
+}
+
+body.nightMode .nightMode .nightModeButton {
+  background-color: rgb(100, 100, 100);
+}
+
+.board .nightMode .nightModeButton::before {
+  content: '';
+  width: 80px;
+  height: 5px;
+  background-color: black;
+  position: absolute;
+  border-radius: 20px;
+}
+
+body.nightMode .board .nightMode .nightModeButton::before {
+  background-color: rgb(0, 255, 255);
+  box-shadow:
+    0 0 15px rgb(0, 255, 255),
+    0 0 30px rgb(0, 255, 255),
+    0 0 45px rgb(0, 255, 255),
+    0 0 60px rgb(0, 255, 255);
+}
+
+.board .nightMode .nightModeButton::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  left: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.board .nightMode .nightModeChecker:checked~.nightModeButton::after {
+  left: 60px;
+  background-color: rgb(0, 255, 255);
+  box-shadow:
+    0 0 15px rgb(0, 255, 255),
+    0 0 30px rgb(0, 255, 255),
+    0 0 45px rgb(0, 255, 255),
+    0 0 60px rgb(0, 255, 255);
+}
+
+.board .nightMode .nightModeButton .toggle {
+  position: absolute;
+  z-index: 100;
+  left: 5px;
+  top: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.board .nightMode .nightModeChecker:checked~.nightModeButton .toggle {
+  left: 65px;
+}
+
+.board .nightMode .nightModeButton .toggle .toggleImg {
+  width: 30px;
+  transition: 0.3s;
+}
+
+.board .nightMode .nightModeButton .toggleOn {
+  opacity: 1;
+}
+
+.board .nightMode .nightModeChecker:checked~.nightModeButton .toggleOn {
+  opacity: 0;
+}
+
+.board .nightMode .nightModeButton .toggleOff {
+  opacity: 0;
+}
+
+.board .nightMode .nightModeChecker:checked~.nightModeButton .toggleOff {
+  opacity: 1;
+}
+
+.board .nightMode .nightModeChecker {
+  display: none;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url(./Orbitron.ttf);
+}
+
+@media (max-width: 825px) {
+  .board {
+    transform: rotate(90deg);
+    min-width: 800px;
+  }
+}

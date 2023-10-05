@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="board">
+    <div class="inside">
+      <div class="daysContainer">
+        <div class="days sunday">Sun</div>
+        <div class="days monday">Mon</div>
+        <div class="days tuesday">Tues</div>
+        <div class="days wednesday">Wed</div>
+        <div class="days thursday">Thur</div>
+        <div class="days friday">Fri</div>
+        <div class="days saturday">Sat</div>
+      </div>
+      <div class="clock">
+        <div class="hour">
+          <div class="showNumber"></div>
+          <div class="text">Hours</div>
+        </div>
+        <div class="minute">
+          <div class="showNumber"></div>
+          <div class="text">Minutes</div>
+        </div>
+        <div class="second">
+          <div class="showNumber"></div>
+          <div class="text">Seconds</div>
+        </div>
+      </div>
+      <div class="date"></div>
+    </div>
+    <div class="nightMode">
+      <input type="checkbox" id="nightModeChecker" class="nightModeChecker">
+      <label for="nightModeChecker" class="nightModeButton">
+        <span class="toggle toggleOn">
+          <img src="./light.png" class="toggleImg toggleOnImg">
+        </span>
+        <span class="toggle toggleOff">
+          <img src="./night.png" class="toggleImg toggleOffImg">
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
